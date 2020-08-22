@@ -1,6 +1,9 @@
 package master
 
 import (
+	"context"
+	"github.com/coreos/etcd/mvcc/mvccpb"
+	"golang_crontab/common"
 	"time"
 
 	"go.etcd.io/etcd/clientv3"
@@ -42,18 +45,18 @@ func InitWorker() (err error) {
 	return
 }
 func (worker *worker) ListWorkers() (workers []string, err error) {
-	//var (
-	//	getResp *clientv3.GetResponse
-	//	kv      *mvccpb.KeyValue
-	//	name    string
-	//)
-	//workers = make([]string, 0)
-	//if getResp, err = worker.kv.Get(context.TODO(), common.JOB_WORKERS_DIR, clientv3.WithPrefix()); err != nil {
-	//	return
-	//}
-	//for _, kv = range getResp.Kvs {
-	//	name = common.GetExtraWorkerName(kv.Key)
-	//	workers = append(workers, name)
-	//}
+	var (
+		getResp *clientv3.GetResponse
+		kv      *mvccpb.KeyValue
+		name    string
+	)
+	workers = make([]string, 0)
+	if getResp, err = worker.kv.Get(context.TODO(), common.JOB_WORKERS_DIR, clientv3.WithPrefix()); err != nil {
+		return
+	}
+	for _, kv = range getResp.Kvs {
+		name = common.GetExtraWorkerName(kv.Key)
+		workers = append(workers, name)
+	}
 	return
 }
