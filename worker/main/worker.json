@@ -2,14 +2,14 @@
   "ETCD的配置": "ETCD",
   "etcd": {
     "ETCD的集群列表": "配置多个，避免单点故障",
-    "etcdEndpoints": ["192.168.0.103:2379"],
+    "etcdEndpoints": ["localhost:2379"],
     "ETCD的连接超时": "单位毫秒",
     "etcdDialTimeout": 5000
   },
   "Mongodb的配置": "MONGODB",
   "mongodb": {
     "mongodb的地址":"采用mongodb的URI",
-    "mongodbUri": "mongodb://192.168.0.103:27017",
+    "mongodbUri": "mongodb://localhost:27017",
     "mongodb的连接超时时间": "毫秒",
     "mongodbConnectTimeout": 5000
   },

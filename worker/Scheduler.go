@@ -120,6 +120,7 @@ func (scheduler *Scheduler) trySchedulerPlan() (schedulerAfter time.Duration) {
 		nextTime     *time.Time
 		now          time.Time
 	)
+	fmt.Println("scheduler.JobEventPlan", scheduler.JobEventPlan)
 	if len(scheduler.JobEventPlan) == 0 {
 		//没有任务则睡一秒
 		schedulerAfter = 1 * time.Second
@@ -158,7 +159,7 @@ func (scheduler *Scheduler) scheduleLoop() {
 
 	//初始化的时候，就进行一次计算最近一次唤醒时间(按规定是1秒)
 	schedulerAfter = scheduler.trySchedulerPlan()
-
+	fmt.Println("schedulerAfter",schedulerAfter)
 	//设置一个定时器,在schedulerAfter设定的时间后执行一次
 	schedulerTimer = time.NewTimer(schedulerAfter)
 	for {
