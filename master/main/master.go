@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"golang_crontab/master"
+	"nezha-job/master"
 	"runtime"
 	"time"
 )

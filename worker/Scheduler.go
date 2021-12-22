@@ -2,7 +2,7 @@ package worker
 
 import (
 	"fmt"
-	"golang_crontab/common"
+	"nezha-job/common"
 	"time"
 )
 

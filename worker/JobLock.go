@@ -2,7 +2,7 @@ package worker
 
 import (
 	"context"
-	"golang_crontab/common"
+	"nezha-job/common"
 
 	"go.etcd.io/etcd/clientv3"
 )

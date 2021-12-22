@@ -1,4 +1,4 @@
-参考来源: git@github.com:guaosi/golang_crontab.git
+参考来源: git@github.com:guaosi/nezha-job.git
 
 Golang分布式高性能任务调度(Crontab)
 ===============
@@ -14,8 +14,9 @@ Golang分布式高性能任务调度(Crontab)
 - releases已经编译好了，可以直接使用(确保有`etcd`与`mongodb`)
 
 
-**太危险了，不敢给测试地址。**
+**启动后运行web地址**
 
+http://localhost:8090/
 
 # 相关界面
 
